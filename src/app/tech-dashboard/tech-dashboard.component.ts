@@ -5,6 +5,7 @@ import { RebootAlert } from '../models/reboot-alert.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../navbar/navbar.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tech-dashboard',
@@ -31,12 +32,12 @@ export class TechDashboardComponent {
   showUserWarning = false;
   selectedAlert: any = null;
 
-  constructor(private authService: AuthService, private apiService: ApiService) {}
+  constructor(private authService: AuthService, private apiService: ApiService,private router: Router) {}
 
   ngOnInit(): void {
     if(localStorage.getItem('role') !== 'technician') {
       this.authService.logout();
-      window.location.href = '/login';
+      this.router.navigate(['/login']);
     }
     this.sites = ["AGA","AHU","ESU","EUN","GLN","ERH","TTU","OUD","RAK","RBA","TNG","AGA","FEZ","CMN","VIL","OZZ","BEM","NDR"];
   }
