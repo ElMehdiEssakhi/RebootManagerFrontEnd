@@ -1,4 +1,4 @@
-# RebootFront
+# RebootManagerFrontEnd
 This is the frontend part of the Reboot Manager project, built using **Angular** and **TailwindCSS**. It connects to the backend Spring Boot API and displays data related to rebooted and postponed machines, with role-based views for technicians and managers.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
